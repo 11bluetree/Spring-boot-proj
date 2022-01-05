@@ -2,10 +2,15 @@ spring:
     datasource:
         url: jdbc:h2:mem:testdb
         driverClassName: org.h2.Driver
-    # jpa:
-        # hibernate:            
+        username: admin
+        password: password
+    h2:
+        console:
+            enabled: true
+    jpa:
+        hibernate:            
             # database-platform: org.hibernate.dialect.H2Dialect
-            #show-sql: true
-            #ddl-auto: create-drop"
+            show-sql: true
+            ddl-auto: "create"
 
             

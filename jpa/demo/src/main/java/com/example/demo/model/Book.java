@@ -9,7 +9,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity  // データの入れ物となることを宣言
 public class Book {
     @Id // 主キーとなる
