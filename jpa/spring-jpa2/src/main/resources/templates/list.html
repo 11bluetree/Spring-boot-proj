@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja-jp" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一言コメント</title>
 </head>
+
 <body>
     <h3>ひとことコメント</h3>
     <form th:action="@{/add}" method="post" th:object="${comment}">
         <label for="content">コメント：</label>
         <input type="text" th:field="*{content}">
-        <br>
         <button>登録</button>
+        <br>
+        <small style="color: red;" th:erorrs="*{content}"></small>
     </form>
+
+    <br>
+    <h3>一覧</h3>
+    <div th:each="comment : ${comments}">
+        <div>[[${comment.id}]] - [[${comment.content}]]</div>
+    </div>
 </body>
+
 </html>
