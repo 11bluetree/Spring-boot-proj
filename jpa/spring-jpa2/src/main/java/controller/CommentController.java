@@ -3,7 +3,6 @@ package controller;
 import com.example.springjpa2.model.Comment;
 import com.example.springjpa2.repository.CommentRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +16,7 @@ public class CommentController {
     public final CommentRepository repository;
 
     // コンストラクタ
-    @Autowired // コンストラクタが1つの場合は省略可能
+    // @Autowired // コンストラクタが1つの場合は省略可能
     public CommentController(CommentRepository repository) {
         this.repository = repository;
     }
@@ -39,6 +38,8 @@ public class CommentController {
             return getAllComments(comment, model);
         }
 
+        /* つぶやいたコメントを保存する。
+        JPAなら基本操作メソッドが入っていて便利だね！！ */
         repository.save(comment);
 
         return "redirect:/";
