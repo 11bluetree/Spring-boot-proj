@@ -2,8 +2,10 @@ spring:
     datasource:
         url: jdbc:h2:mem:testdb
         driverClassName: org.h2.Driver
-        # username: admin
-        # password: password
+        username: admin
+        password: password
+    messages:
+        basename: "messages"
     h2:
         console:
             enabled: true

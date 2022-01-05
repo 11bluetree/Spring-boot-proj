@@ -1,4 +1,4 @@
-package controller;
+package com.example.springjpa2.controller;
 
 import com.example.springjpa2.model.Comment;
 import com.example.springjpa2.repository.CommentRepository;
@@ -30,16 +30,18 @@ public class CommentController {
     }
 
     @PostMapping("/add")
-    public String addComment(@ModelAttribute @Validated Comment comment, BindingResult result,Model model){
+    public String addComment(@ModelAttribute @Validated Comment comment, BindingResult result, Model model) {
 
         model.addAttribute("comments", repository.findAll());
 
-        if(result.hasErrors()){
-            return getAllComments(comment, model);
+        if (result.hasErrors()) {
+            return "list";
         }
 
-        /* つぶやいたコメントを保存する。
-        JPAなら基本操作メソッドが入っていて便利だね！！ */
+        /*
+         * つぶやいたコメントを保存する。
+         * JPAなら基本操作メソッドが入っていて便利だね！！
+         */
         repository.save(comment);
 
         return "redirect:/";

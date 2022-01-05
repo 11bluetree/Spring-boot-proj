@@ -18,7 +18,7 @@ public class Comment {
     private Long id;
 
     @NotBlank
-    @Size(max = 40) // つぶやきの長さを制限
+    @Size(max = 10) // つぶやきの長さを制限
     private String content;
 
 }
