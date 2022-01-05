@@ -9,9 +9,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+
+@Entity  // データの入れ物となることを宣言
 public class Book {
-    @Id
+    @Id // 主キーとなる
     @GeneratedValue // キーの自動採番
     private Long id;
 
