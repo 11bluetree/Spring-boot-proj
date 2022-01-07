@@ -1,10 +1,12 @@
 spring:
     datasource:
-        url: jdbc:h2:mem:aoki
-        driverClassName: org.h2.Driver
+        url: "jdbc:h2:mem:aokidb;DB_CLOSE_ON_EXIT=true"
+        driverClassName: "org.h2.Driver"
     h2:
         console:
             enabled: true
+    messages:
+        basename: "messages"
     jpa:
         hibernate:      
             ddl-auto: "create-drop"      
