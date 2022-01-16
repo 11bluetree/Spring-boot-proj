@@ -22,6 +22,8 @@ public class AppSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated();
+        // .and().formLogin();とつなげて記述してもよい
+        
 
         // フォームベース認証設定
         http.formLogin();
@@ -32,10 +34,10 @@ public class AppSecurity extends WebSecurityConfigurerAdapter {
         // メモリ 内 認証 を 設定
         auth.inMemoryAuthentication()
                 // "user" を 追加
-            .withUser("user")
+                .withUser("Aoki")
                 // "password" を BCrypt で 暗号化
-            .password(passwordEncoder().encode("password"))
+                .password(passwordEncoder().encode("Xpass00?"))
                 // 権限（ ロール） を 設定
-            .authorities("ROLE_USER");
+                .authorities("ROLE_USER");
     }
 }
