@@ -2,8 +2,8 @@ spring:
     datasource:
         url: jdbc:h2:mem:users # インメモリにテーブル作成　※ローカルファイルに作成する場合は jdbc:h2:/home/opc/users
         # driverClassName: "org.h2.Driver"
-        username: aoki
-        password: haru
+        username: Aoki
+        password: "Xpass00?"
     h2:
         console:
             enabled: true # H2コンソールを有効にする

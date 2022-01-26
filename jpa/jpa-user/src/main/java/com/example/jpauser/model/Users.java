@@ -15,17 +15,17 @@ import lombok.Data;
 public class Users {
     @Id
     @GeneratedValue
-    // @Column(name = "ID")
+    @Column(name = "ID")
     private Long id;
 
-    // @Column(name = "USER")
-    // @NotNull
-    // @Range(max = 30, min = 6)
+    @Column(name = "USER")
+    @NotNull
+    @Range(max = 30, min = 6)
     private String user;
 
-    // @Column(name = "PASSWORD")
-    // @NotNull
-    // @Range(max = 20, min = 8)
+    @Column(name = "PASSWORD")
+    @NotNull
+    @Range(max = 20, min = 8)
     private String password;
 
 }
