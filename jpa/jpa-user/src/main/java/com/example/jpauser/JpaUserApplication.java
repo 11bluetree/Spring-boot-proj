@@ -8,6 +8,7 @@ public class JpaUserApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaUserApplication.class, args);
+		System.out.println("治人");
 	}
 
 }
