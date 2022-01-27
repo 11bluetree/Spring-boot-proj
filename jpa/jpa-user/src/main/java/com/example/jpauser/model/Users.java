@@ -5,8 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Range;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -20,12 +19,12 @@ public class Users {
 
     @Column(name = "USER")
     @NotNull
-    @Range(max = 30, min = 6)
+    @Size(max = 30, min = 4)  // @Rangeは整数ようだよ！
     private String user;
 
     @Column(name = "PASSWORD")
     @NotNull
-    @Range(max = 20, min = 8)
+    @Size(max = 20, min = 4)
     private String password;
 
 }
